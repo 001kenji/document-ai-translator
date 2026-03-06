@@ -43,7 +43,7 @@ const useGeminiTextGen = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
+          model: 'gemini-2.5-flash',
           messages: prompt,
         }),
       })
@@ -65,10 +65,10 @@ const useGeminiTextGen = () => {
   const generateText = async (messages) => {
     setLoading(true)
     setError(null)
-
+// gemini-2.5-flash
     try {
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
         {
           method: 'POST',
           headers: {
